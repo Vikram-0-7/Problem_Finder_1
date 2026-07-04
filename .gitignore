@@ -8,7 +8,7 @@
 # ========================
 # Python / Backend
 # ========================
-.HOW_IT_WORKS.md
+.HOW_IT_WORKS
 __pycache__/
 *.py[cod]
 *$py.class
