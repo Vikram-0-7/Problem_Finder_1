@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0B0B0B;
+  color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A2A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #393939;
+}
+
+/* ============================================
+   SELECTION HIGHLIGHT
+   ============================================ */
+
+::selection {
+  background: rgba(255, 106, 0, 0.3);
+  color: #FFFFFF;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+@layer utilities {
+  .glass {
+    background: rgba(28, 28, 28, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(42, 42, 42, 0.5);
+  }
+
+  .glass-dark {
+    background: rgba(11, 11, 11, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(42, 42, 42, 0.5);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 30px rgba(255, 106, 0, 0.35);
+  }
+
+  .glow-orange-sm {
+    box-shadow: 0 0 15px rgba(255, 106, 0, 0.25);
+  }
+
+  .glow-orange-lg {
+    box-shadow: 0 0 50px rgba(255, 106, 0, 0.45);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #FF5A00 0%, #FF8C00 50%, #FFD166 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-white {
+    background: linear-gradient(180deg, #FFFFFF 0%, #A8A8A8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient {
+    border-image: linear-gradient(135deg, #FF6A00, #FFD166) 1;
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(rgba(255, 106, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 106, 0, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .animate-in {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* ============================================
+   COMPONENT BASE STYLES
+   ============================================ */
+
+@layer components {
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-[14px] px-7 py-3.5 transition-all duration-300 cursor-pointer select-none;
+  }
+
+  .card-base {
+    @apply bg-card border border-border rounded-3xl transition-all duration-350;
+  }
+
+  .card-base:hover {
+    @apply bg-card-hover border-primary shadow-glow -translate-y-1.5;
+  }
+
+  .input-base {
+    @apply bg-[#171717] border border-border text-white rounded-2xl px-5 py-4 outline-none transition-all duration-300;
+  }
+
+  .input-base:focus {
+    @apply border-primary shadow-glow;
+  }
+
+  .badge-base {
+    @apply inline-flex items-center gap-1.5 bg-primary/10 text-primary-light border border-primary/25 rounded-full px-4 py-1.5 text-sm font-medium;
+  }
+}
+
+/* ============================================
+   RECHARTS CUSTOM STYLES
+   ============================================ */
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #2A2A2A;
+}
+
+.recharts-text {
+  fill: #A8A8A8;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+}
+
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #1C1C1C !important;
+  border: 1px solid #2A2A2A !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
