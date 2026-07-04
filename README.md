@@ -4,6 +4,23 @@ An AI-powered platform that **discovers, extracts, and catalogs civic problems**
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+<p align="center">
+  <img src="./web_photos/Home_page.png" alt="Home Page" width="900"/>
+</p>
+
+### 🔍 Discover Page
+
+<p align="center">
+  <img src="./web_photos/Discover.png" alt="Discover Page" width="900"/>
+</p>
+
+
+---
+
 ## ✨ Features
 
 | Feature | Description |
@@ -173,7 +190,3 @@ government-problem-finder/
 | `GROQ_MODEL` | Groq model identifier (default: `llama-3.1-8b-instant`) | ✅ |
 
 ---
-
-## 📄 License
-
-This project is open source and available under the [MIT License](./LICENSE).
